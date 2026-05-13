@@ -12,7 +12,13 @@
 </head>
 
 <body>
+<!-- SCROLL TO TOP BUTTON -->
 
+<button id="topBtn" onclick="scrollToTop()">
+
+    <i class="fa fa-arrow-up"></i>
+
+</button>
 <!-- NAVBAR -->
 <header>
 <nav class="navbar">
@@ -33,13 +39,50 @@
 </nav>
 </header>
 
-<!-- HERO -->
-<<section class="hero">
+<!-- HERO SECTION -->
+
+<section class="hero">
+
     <div class="hero-content">
+
         <h1>Build Smarter with MainCrafts</h1>
-        <p>Create powerful, scalable and modern web solutions.</p>
-        <button class="cta-btn">Get Started</button>
+
+        <p>
+            Create powerful, scalable and modern web solutions.
+        </p>
+
+        <!-- BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <!-- GET STARTED -->
+            <button class="cta-btn" onclick="showMessage()">
+                <i class="fa fa-rocket"></i>
+                Get Started
+            </button>
+
+            <!-- PORTFOLIO -->
+            <button class="portfolio-btn" onclick="location.href='#pricing'">
+                <i class="fa fa-briefcase"></i>
+                Pricing
+            </button>
+
+            <!-- FEATURES -->
+            <button class="feature-btn" onclick="location.href='#features'">
+                <i class="fa fa-star"></i>
+                Features
+            </button>
+
+            <!-- CONTACT -->
+            <button class="contact-btn" onclick="location.href='#contact'">
+                <i class="fa fa-envelope"></i>
+                Contact
+            </button>
+
+        </div>
+
     </div>
+
 </section>
 
 <!-- FEATURES -->
@@ -74,7 +117,53 @@
         </div>
     </div>
 </section>
+<!-- SERVICES SECTION -->
 
+<section class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="services-container">
+
+        <div class="service-card">
+
+            <i class="fa fa-code"></i>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Responsive and modern websites using latest technologies.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa fa-paint-brush"></i>
+
+            <h3>UI / UX Design</h3>
+
+            <p>
+                Creative user interface designs with best experience.
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <i class="fa fa-chart-line"></i>
+
+            <h3>Digital Marketing</h3>
+
+            <p>
+                Improve business growth using online marketing solutions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 <!-- STATS -->
 <section class="stats">
 <div><h2>500+</h2><p>Projects</p></div>
@@ -188,7 +277,95 @@
 
     </div>
 </section>
+<!-- NEWSLETTER SECTION -->
 
+<section class="newsletter">
+
+    <h2>Subscribe Newsletter</h2>
+
+    <p>
+        Get latest updates and offers directly in your inbox.
+    </p>
+
+    <form class="newsletter-form">
+
+        <input type="email" placeholder="Enter Your Email" required>
+
+        <button type="submit">
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+<!-- TEAM SECTION -->
+
+<section class="team">
+
+    <h2>Meet Our Team</h2>
+
+    <div class="team-container">
+
+        <div class="team-card">
+
+            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+            <h3>Rahul Sharma</h3>
+
+            <p>Frontend Developer</p>
+
+        </div>
+
+        <div class="team-card">
+
+            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+            <h3>Arpita Patil</h3>
+
+            <p>UI/UX Designer</p>
+
+        </div>
+
+        <div class="team-card">
+
+            <img src="https://randomuser.me/api/portraits/men/68.jpg">
+
+            <h3>Aman Verma</h3>
+
+            <p>Backend Developer</p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- SOCIAL MEDIA -->
+
+<section class="social-media">
+
+    <h2>Follow Us</h2>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i class="fab fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-github"></i>
+        </a>
+
+    </div>
+
+</section>
 <!-- FOOTER -->
 <footer>
 <p>© 2025 MainCrafts</p>
