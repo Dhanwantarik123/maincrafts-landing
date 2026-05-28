@@ -1,376 +1,1392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MainCrafts</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>MainCrafts Smart Dashboard</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+
+/* =========================
+RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.7)
+),
+
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:rgba(79,70,229,0.8);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:white;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+}
+
+.nav-links li{
+margin-left:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#ffd700;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:14px 28px;
+border:none;
+border-radius:10px;
+background:#4f46e5;
+color:white;
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+}
+
+/* =========================
+SECTION TITLE
+========================= */
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+}
+
+/* =========================
+COMMON GLASS EFFECT
+========================= */
+
+.feature-card,
+.task-box,
+.database-box,
+.info-card,
+.contact-form,
+.task,
+.service-card,
+.gallery img,
+.price-card,
+.testimonial-card{
+
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 8px 32px rgba(0,0,0,.3);
+
+color:white;
+
+}
+
+/* =========================
+FEATURES
+========================= */
+
+.features{
+padding:80px 8%;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.feature-card{
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+}
+
+.feature-card i{
+font-size:45px;
+margin-bottom:15px;
+color:#00f2fe;
+}
+
+/* =========================
+SERVICES
+========================= */
+
+.services{
+padding:80px 8%;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-card{
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery{
+padding:80px 8%;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* =========================
+TASK MANAGER
+========================= */
+
+.task-manager{
+padding:80px 8%;
+}
+
+.task-box{
+padding:30px;
+border-radius:20px;
+}
+
+.task-form{
+display:grid;
+grid-template-columns:2fr 1fr 1fr auto;
+gap:15px;
+margin-bottom:20px;
+}
+
+.task-form input,
+.task-form select{
+padding:12px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.2);
+color:white;
+}
+
+.task-form button{
+background:#4f46e5;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+}
+
+#searchInput{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+margin-bottom:20px;
+background:rgba(255,255,255,0.2);
+color:white;
+}
+
+.task{
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.actions button{
+border:none;
+padding:8px 12px;
+margin-left:5px;
+border-radius:6px;
+cursor:pointer;
+color:white;
+}
+
+.complete{
+background:green;
+}
+
+.edit{
+background:blue;
+}
+
+.delete{
+background:red;
+}
+
+/* =========================
+DATABASE
+========================= */
+
+.database{
+padding:80px 8%;
+}
+
+.database-box{
+padding:30px;
+border-radius:20px;
+}
+
+.database-form{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-bottom:20px;
+}
+
+.database-form input,
+.database-form select{
+padding:12px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.2);
+color:white;
+}
+
+.database-form button{
+background:#4f46e5;
+color:white;
+border:none;
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+overflow:hidden;
+border-radius:10px;
+}
+
+table th{
+background:#4f46e5;
+padding:12px;
+}
+
+table td{
+padding:12px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+/* =========================
+PROJECT INFO
+========================= */
+
+.project-info{
+padding:80px 8%;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.info-card{
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.blank-img{
+width:120px;
+height:120px;
+background:rgba(255,255,255,0.2);
+border-radius:50%;
+margin:auto;
+margin-bottom:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:40px;
+}
+
+/* =========================
+PRICING
+========================= */
+
+.pricing{
+padding:80px 8%;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.price-card{
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.price-card h1{
+font-size:50px;
+margin:20px 0;
+}
+
+/* =========================
+TESTIMONIALS
+========================= */
+
+.testimonials{
+padding:80px 8%;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.testimonial-card{
+padding:30px;
+border-radius:20px;
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact{
+padding:80px 8%;
+}
+
+.contact-form{
+max-width:700px;
+margin:auto;
+padding:30px;
+border-radius:20px;
+display:flex;
+flex-direction:column;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+margin-bottom:15px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.2);
+color:white;
+}
+
+.contact-form button{
+padding:14px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+background:rgba(0,0,0,0.7);
+padding:25px;
+text-align:center;
+}
+
+/* =========================
+PLACEHOLDER
+========================= */
+
+input::placeholder,
+textarea::placeholder{
+color:#eee;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.navbar{
+flex-direction:column;
+}
+
+.nav-links{
+margin-top:10px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.task-form{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
-<!-- SCROLL TO TOP BUTTON -->
 
-<button id="topBtn" onclick="scrollToTop()">
+<!-- =========================
+NAVBAR
+========================= -->
 
-    <i class="fa fa-arrow-up"></i>
-
-</button>
-<!-- NAVBAR -->
-<header>
 <nav class="navbar">
-<div class="logo">MainCrafts</div>
 
-<ul class="nav-links">
-<li><a href="#">Home</a></li>
-<li><a href="#features">Features</a></li>
-<li><a href="#pricing">Pricing</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-<div class="menu-toggle" onclick="toggleMenu()">
-<i class="fa fa-bars"></i>
+<div class="logo">
+MainCrafts
 </div>
 
-<button onclick="toggleDarkMode()" class="dark-btn">🌙</button>
-</nav>
-</header>
+<ul class="nav-links">
 
-<!-- HERO SECTION -->
+<li><a href="#">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#task">Tasks</a></li>
+<li><a href="#database">Database</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- =========================
+HERO
+========================= -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div>
 
-        <h1>Build Smarter with MainCrafts</h1>
+<h1>Build Smarter With MainCrafts</h1>
 
-        <p>
-            Create powerful, scalable and modern web solutions.
-        </p>
+<p>
+Modern Startup Website + Smart Dashboard
+</p>
 
-        <!-- BUTTONS -->
+<button onclick="alert('Welcome To MainCrafts 🚀')">
+Get Started
+</button>
 
-        <div class="hero-buttons">
-
-            <!-- GET STARTED -->
-            <button class="cta-btn" onclick="showMessage()">
-                <i class="fa fa-rocket"></i>
-                Get Started
-            </button>
-
-            <!-- PORTFOLIO -->
-            <button class="portfolio-btn" onclick="location.href='#pricing'">
-                <i class="fa fa-briefcase"></i>
-                Pricing
-            </button>
-
-            <!-- FEATURES -->
-            <button class="feature-btn" onclick="location.href='#features'">
-                <i class="fa fa-star"></i>
-                Features
-            </button>
-
-            <!-- CONTACT -->
-            <button class="contact-btn" onclick="location.href='#contact'">
-                <i class="fa fa-envelope"></i>
-                Contact
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FEATURES -->
-<section id="features" class="features">
-<h2>Our Features</h2>
-
-<div class="feature-container">
-<div class="card"><i class="fa fa-bolt"></i><h3>Fast</h3></div>
-<div class="card"><i class="fa fa-mobile-alt"></i><h3>Responsive</h3></div>
-<div class="card"><i class="fa fa-cloud"></i><h3>Scalable</h3></div>
-<div class="card"><i class="fa fa-lock"></i><h3>Secure</h3></div>
 </div>
-</section>
-
-<section class="gallery">
-    <h2>Our Work</h2>
-
-    <div class="gallery-container">
-        <div class="img-card">
-            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-            <p>Web Design</p>
-        </div>
-
-        <div class="img-card">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
-            <p>App Development</p>
-        </div>
-
-        <div class="img-card">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-            <p>Team Work</p>
-        </div>
-    </div>
-</section>
-<!-- SERVICES SECTION -->
-
-<section class="services">
-
-    <h2>Our Services</h2>
-
-    <div class="services-container">
-
-        <div class="service-card">
-
-            <i class="fa fa-code"></i>
-
-            <h3>Web Development</h3>
-
-            <p>
-                Responsive and modern websites using latest technologies.
-            </p>
-
-        </div>
-
-        <div class="service-card">
-
-            <i class="fa fa-paint-brush"></i>
-
-            <h3>UI / UX Design</h3>
-
-            <p>
-                Creative user interface designs with best experience.
-            </p>
-
-        </div>
-
-        <div class="service-card">
-
-            <i class="fa fa-chart-line"></i>
-
-            <h3>Digital Marketing</h3>
-
-            <p>
-                Improve business growth using online marketing solutions.
-            </p>
-
-        </div>
-
-    </div>
 
 </section>
-<!-- STATS -->
-<section class="stats">
-<div><h2>500+</h2><p>Projects</p></div>
-<div><h2>300+</h2><p>Clients</p></div>
-<div><h2>5+</h2><p>Years</p></div>
+
+<!-- =========================
+FEATURES
+========================= -->
+
+<section id="features" class="features">
+
+<h2 class="section-title">
+Our Features
+</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-bolt"></i>
+<h3>Fast</h3>
+<p>Lightning fast performance.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile-alt"></i>
+<h3>Responsive</h3>
+<p>Fully responsive design.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-lock"></i>
+<h3>Secure</h3>
+<p>Advanced security system.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-cloud"></i>
+<h3>Cloud Ready</h3>
+<p>Modern scalable solutions.</p>
+</div>
+
+</div>
+
 </section>
+
+<!-- =========================
+SERVICES
+========================= -->
+
+<section id="services" class="services">
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Web Development</h3>
+<p>Modern responsive websites.</p>
+</div>
+
+<div class="service-card">
+<h3>UI/UX Design</h3>
+<p>Creative modern interfaces.</p>
+</div>
+
+<div class="service-card">
+<h3>Mobile Apps</h3>
+<p>Android & iOS applications.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+GALLERY
+========================= -->
+
+<section id="gallery" class="gallery">
+
+<h2 class="section-title">
+Project Gallery
+</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1200">
+
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200">
+
+</div>
+
+</section>
+
+<!-- =========================
+TASK MANAGER
+========================= -->
+
+<section id="task" class="task-manager">
+
+<h2 class="section-title">
+Task Manager Dashboard
+</h2>
+
+<div class="task-box">
+
+<div class="task-form">
+
+<input type="text" id="taskInput" placeholder="Enter Task">
+
+<input type="date" id="taskDate">
+
+<select id="priority">
+
+<option value="High">High</option>
+<option value="Medium">Medium</option>
+<option value="Low">Low</option>
+
+</select>
+
+<button onclick="addTask()">
+Add Task
+</button>
+
+</div>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Tasks..."
+onkeyup="searchTask()">
+
+<div id="taskList"></div>
+
+</div>
+
+</section>
+
+<!-- =========================
+DATABASE
+========================= -->
+
+<section id="database" class="database">
+
+<h2 class="section-title">
+Frontend Database System
+</h2>
+
+<div class="database-box">
+
+<form id="studentForm">
+
+<div class="database-form">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="Email" required>
+
+<input type="number" id="age" placeholder="Age" required>
+
+<select id="course">
+
+<option value="">Select Course</option>
+
+<option>Web Development</option>
+<option>Data Science</option>
+<option>Artificial Intelligence</option>
+<option>UI/UX Design</option>
+
+</select>
+
+<button type="submit">
+Add Student
+</button>
+
+</div>
+
+</form>
+
+<input
+type="text"
+id="searchStudent"
+placeholder="Search Student..."
+onkeyup="searchStudents()"
+style="
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.2);
+color:white;
+">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+<th>Email</th>
+<th>Age</th>
+<th>Course</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- =========================
+PROJECT INFO
+========================= -->
+
+<section class="project-info">
+
+<h2 class="section-title">
+Project Information
+</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<div class="blank-img">
+<i class="fa fa-user"></i>
+</div>
+
+<h3>MainCrafts Dashboard</h3>
+
+<p>
+Responsive frontend project with CRUD system,
+task management and database operations.
+</p>
+
+</div>
+
+<div class="info-card">
+
+<div class="blank-img">
+<i class="fa fa-code"></i>
+</div>
+
+<h3>Technologies Used</h3>
+
+<p>
+HTML5, CSS3, JavaScript,
+Font Awesome and LocalStorage.
+</p>
+
+</div>
+
+<div class="info-card">
+
+<div class="blank-img">
+<i class="fa fa-laptop"></i>
+</div>
+
+<h3>Frontend Database</h3>
+
+<p>
+Stores and manages student data using browser LocalStorage.
+</p>
+
+</div>
+
+<div class="info-card">
+
+<div class="blank-img">
+<i class="fa fa-rocket"></i>
+</div>
+
+<h3>Project Objective</h3>
+
+<p>
+Create a modern responsive web application
+with frontend CRUD functionality.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+PRICING
+========================= -->
 
 <section id="pricing" class="pricing">
-    <h2>Our Pricing Plans</h2>
 
-    <div class="pricing-container">
+<h2 class="section-title">
+Pricing Plans
+</h2>
 
-        <!-- BASIC -->
-        <div class="price-card">
-            <h3>Basic</h3>
-            <h1>₹999</h1>
-            <ul>
-                <li>1 Website</li>
-                <li>Responsive Design</li>
-                <li>Email Support</li>
-            </ul>
-            <button onclick="selectPlan('Basic')">Choose Plan</button>
-        </div>
+<div class="pricing-grid">
 
-        <!-- STANDARD -->
-        <div class="price-card popular">
-            <span class="badge">Most Popular</span>
-            <h3>Standard</h3>
-            <h1>₹1999</h1>
-            <ul>
-                <li>3 Websites</li>
-                <li>SEO Optimization</li>
-                <li>Priority Support</li>
-            </ul>
-            <button onclick="selectPlan('Standard')">Choose Plan</button>
-        </div>
+<div class="price-card">
+<h3>Basic</h3>
+<h1>₹999</h1>
+<p>1 Website</p>
+<p>Email Support</p>
+</div>
 
-        <!-- PREMIUM -->
-        <div class="price-card">
-            <h3>Premium</h3>
-            <h1>₹4999</h1>
-            <ul>
-                <li>Unlimited Projects</li>
-                <li>Advanced Features</li>
-                <li>24/7 Support</li>
-            </ul>
-            <button onclick="selectPlan('Premium')">Choose Plan</button>
-        </div>
+<div class="price-card">
+<h3>Pro</h3>
+<h1>₹1999</h1>
+<p>3 Websites</p>
+<p>Priority Support</p>
+</div>
 
-    </div>
+<div class="price-card">
+<h3>Enterprise</h3>
+<h1>₹4999</h1>
+<p>Unlimited Projects</p>
+<p>24/7 Support</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- =========================
+TESTIMONIALS
+========================= -->
+
 <section class="testimonials">
-<h2>Clients</h2>
-<div class="testimonial-container">
-<div class="testimonial">Great Work!</div>
-<div class="testimonial">Amazing UI</div>
-<div class="testimonial">Loved it</div>
+
+<h2 class="section-title">
+Testimonials
+</h2>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+Amazing Dashboard Experience 🚀
 </div>
+
+<div class="testimonial-card">
+Very Professional Website Design.
+</div>
+
+<div class="testimonial-card">
+Loved The Glassmorphism UI.
+</div>
+
+</div>
+
 </section>
 
-<!-- FAQ -->
-<section class="faq">
-<h2>FAQ</h2>
-
-<div class="faq-item">
-<h4 onclick="toggleFAQ(this)">What do you offer?</h4>
-<p>Web, App and Design services.</p>
-</div>
-
-<div class="faq-item">
-<h4 onclick="toggleFAQ(this)">Support?</h4>
-<p>24/7 Support available.</p>
-</div>
-
-</section>
+<!-- =========================
+CONTACT
+========================= -->
 
 <section id="contact" class="contact">
-    <h2>Contact Us</h2>
 
-    <div class="contact-container">
+<h2 class="section-title">
+Contact Us
+</h2>
 
-        <!-- CONTACT TABLE -->
-        <table class="contact-table">
-            <tr>
-                <th>Type</th>
-                <th>Details</th>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>maincrafts@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <td>+91 9876543210</td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td>Nagpur, India</td>
-            </tr>
-        </table>
+<form class="contact-form" onsubmit="submitForm(event)">
 
-        <!-- FORM -->
-        <form class="contact-form" onsubmit="submitForm(event)">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+<input type="text" placeholder="Your Name" required>
 
-    </div>
-</section>
-<!-- NEWSLETTER SECTION -->
+<input type="email" placeholder="Your Email" required>
 
-<section class="newsletter">
+<textarea rows="5" placeholder="Message"></textarea>
 
-    <h2>Subscribe Newsletter</h2>
+<button type="submit">
+Send Message
+</button>
 
-    <p>
-        Get latest updates and offers directly in your inbox.
-    </p>
-
-    <form class="newsletter-form">
-
-        <input type="email" placeholder="Enter Your Email" required>
-
-        <button type="submit">
-            Subscribe
-        </button>
-
-    </form>
+</form>
 
 </section>
-<!-- TEAM SECTION -->
 
-<section class="team">
+<!-- =========================
+FOOTER
+========================= -->
 
-    <h2>Meet Our Team</h2>
-
-    <div class="team-container">
-
-        <div class="team-card">
-
-            <img src="https://randomuser.me/api/portraits/men/32.jpg">
-
-            <h3>Rahul Sharma</h3>
-
-            <p>Frontend Developer</p>
-
-        </div>
-
-        <div class="team-card">
-
-            <img src="https://randomuser.me/api/portraits/women/44.jpg">
-
-            <h3>Arpita Patil</h3>
-
-            <p>UI/UX Designer</p>
-
-        </div>
-
-        <div class="team-card">
-
-            <img src="https://randomuser.me/api/portraits/men/68.jpg">
-
-            <h3>Aman Verma</h3>
-
-            <p>Backend Developer</p>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- SOCIAL MEDIA -->
-
-<section class="social-media">
-
-    <h2>Follow Us</h2>
-
-    <div class="social-icons">
-
-        <a href="#">
-            <i class="fab fa-facebook"></i>
-        </a>
-
-        <a href="#">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="#">
-            <i class="fab fa-linkedin"></i>
-        </a>
-
-        <a href="#">
-            <i class="fab fa-github"></i>
-        </a>
-
-    </div>
-
-</section>
-<!-- FOOTER -->
 <footer>
-<p>© 2025 MainCrafts</p>
+
+<p>
+© 2025 MainCrafts | All Rights Reserved
+</p>
+
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+/* =========================
+CONTACT FORM
+========================= */
+
+function submitForm(e){
+
+e.preventDefault();
+
+alert("Message Sent Successfully ✅");
+
+}
+
+/* =========================
+TASK MANAGER
+========================= */
+
+let tasks =
+JSON.parse(localStorage.getItem("tasks")) || [];
+
+function saveTasks(){
+
+localStorage.setItem(
+"tasks",
+JSON.stringify(tasks)
+);
+
+}
+
+function displayTasks(taskArray = tasks){
+
+const taskList =
+document.getElementById("taskList");
+
+taskList.innerHTML = "";
+
+taskArray.forEach((task,index)=>{
+
+taskList.innerHTML += `
+
+<div class="task">
+
+<div>
+
+<h3>${task.name}</h3>
+
+<p>📅 ${task.date}</p>
+
+<p>Priority: ${task.priority}</p>
+
+</div>
+
+<div class="actions">
+
+<button class="complete"
+onclick="toggleComplete(${index})">
+Done
+</button>
+
+<button class="edit"
+onclick="editTask(${index})">
+Edit
+</button>
+
+<button class="delete"
+onclick="deleteTask(${index})">
+Delete
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function addTask(){
+
+const taskInput =
+document.getElementById("taskInput");
+
+const taskDate =
+document.getElementById("taskDate");
+
+const priority =
+document.getElementById("priority");
+
+if(taskInput.value===""){
+
+alert("Please Enter Task");
+
+return;
+
+}
+
+tasks.push({
+
+name:taskInput.value,
+date:taskDate.value,
+priority:priority.value
+
+});
+
+saveTasks();
+
+displayTasks();
+
+alert("Task Added Successfully ✅");
+
+taskInput.value="";
+taskDate.value="";
+
+}
+
+function deleteTask(index){
+
+if(confirm("Delete Task?")){
+
+tasks.splice(index,1);
+
+saveTasks();
+
+displayTasks();
+
+alert("Task Deleted ❌");
+
+}
+
+}
+
+function editTask(index){
+
+const newTask =
+prompt(
+"Edit Task",
+tasks[index].name
+);
+
+if(newTask){
+
+tasks[index].name = newTask;
+
+saveTasks();
+
+displayTasks();
+
+alert("Task Updated ✏️");
+
+}
+
+}
+
+function toggleComplete(index){
+
+alert("Task Completed ✅");
+
+}
+
+function searchTask(){
+
+const search =
+document
+.getElementById("searchInput")
+.value
+.toLowerCase();
+
+const filtered =
+tasks.filter(task =>
+
+task.name
+.toLowerCase()
+.includes(search)
+
+);
+
+displayTasks(filtered);
+
+}
+
+displayTasks();
+
+/* =========================
+FRONTEND DATABASE
+========================= */
+
+let students =
+JSON.parse(localStorage.getItem("students"))
+|| [];
+
+function displayStudents(data = students){
+
+const tableBody =
+document.getElementById("tableBody");
+
+tableBody.innerHTML = "";
+
+data.forEach((student,index)=>{
+
+tableBody.innerHTML += `
+
+<tr>
+
+<td>${student.name}</td>
+<td>${student.email}</td>
+<td>${student.age}</td>
+<td>${student.course}</td>
+
+<td>
+
+<button
+onclick="editStudent(${index})"
+style="
+background:blue;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+cursor:pointer;
+">
+
+Edit
+
+</button>
+
+<button
+onclick="deleteStudent(${index})"
+style="
+background:red;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:6px;
+cursor:pointer;
+">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+function saveStudents(){
+
+localStorage.setItem(
+"students",
+JSON.stringify(students)
+);
+
+}
+
+document
+.getElementById("studentForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("name").value;
+
+const email =
+document.getElementById("email").value;
+
+const age =
+document.getElementById("age").value;
+
+const course =
+document.getElementById("course").value;
+
+if(name.length < 3){
+
+alert("Name must contain at least 3 letters");
+
+return;
+
+}
+
+if(age < 18){
+
+alert("Age must be greater than 18");
+
+return;
+
+}
+
+if(course === ""){
+
+alert("Please Select Course");
+
+return;
+
+}
+
+const emailPattern =
+/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(!email.match(emailPattern)){
+
+alert("Invalid Email Address");
+
+return;
+
+}
+
+students.push({
+
+name,
+email,
+age,
+course
+
+});
+
+saveStudents();
+
+displayStudents();
+
+alert("Student Added Successfully ✅");
+
+document
+.getElementById("studentForm")
+.reset();
+
+});
+
+function deleteStudent(index){
+
+if(confirm("Delete Student?")){
+
+students.splice(index,1);
+
+saveStudents();
+
+displayStudents();
+
+alert("Student Deleted ❌");
+
+}
+
+}
+
+function editStudent(index){
+
+const newName =
+prompt(
+"Edit Name",
+students[index].name
+);
+
+if(newName){
+
+students[index].name = newName;
+
+saveStudents();
+
+displayStudents();
+
+alert("Student Updated ✏️");
+
+}
+
+}
+
+function searchStudents(){
+
+const search =
+document
+.getElementById("searchStudent")
+.value
+.toLowerCase();
+
+const filtered =
+students.filter(student =>
+
+student.name
+.toLowerCase()
+.includes(search)
+
+);
+
+displayStudents(filtered);
+
+}
+
+displayStudents();
+
+</script>
+
 </body>
 </html>
